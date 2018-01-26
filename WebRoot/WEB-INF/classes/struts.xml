@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+<package name="default" namespace="/" extends="struts-default">
+	<action name="test" class="com.bbs.action.TestAction">
+		<result>/login.jsp</result>
+	</action>
+	<action name="login" class="com.bbs.action.UserAction" method="login">
+		<result name="login_success">/index.jsp</result>
+		<result name="login_failure">/login.jsp</result>
+	</action>
+	<action name="regist" class="com.bbs.action.UserAction" method="regist">
+		<result name="regist_success">/index.jsp</result>
+		<result name="regist_failture">/regist.jsp</result>
+	</action>
+	<action name="logout" class="com.bbs.action.LogoutAction">
+		<result name="success">/index.jsp</result>
+		<result name="error">/pages/error.jsp</result>
+	</action>
+	<action name="change_info" class="com.bbs.action.UserAction" method="userChange">
+		<result name="change_success">/pages/changeInfo.jsp</result>
+		<result name="error">/pages/error.jsp</result>		
+	</action>
+	<action name="change_user_info" class="com.bbs.action.UserAction" method="changeUserInfo">
+		<result name="change_success">/manage/userManage.jsp</result>
+		<result name="error">/pages/error.jsp</result>		
+	</action>
+	<action name="admin_change_info" class="com.bbs.action.UserAction" method="userChange">
+		<result name="change_success">/manage/change_info.jsp</result>
+		<result name="error">/pages/error.jsp</result>		
+	</action>
+	<action name="publish_post" class="com.bbs.action.PublishpostAction">
+		<result >/pages/mypost.jsp</result>
+		<result name="publish">/pages/post.jsp</result>		
+	</action>
+	
+	<action name="edit_post" class="com.bbs.action.PostAction" method="editPost">
+		<result >/pages/publish.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="admin_edit_post" class="com.bbs.action.PostAction" method="adminEditPost">
+		<result >/manage/managePost3.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="update_post" class="com.bbs.action.PublishpostAction" method="updatePost">
+	
+		<result name="update_admin">/manage/managePost.jsp</result>	
+		<result >/pages/mypost.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>	
+	<action name="apply_best" class="com.bbs.action.PostAction" method="applyBest">
+		<result >/pages/mypost.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="judge_good" class="com.bbs.action.JudgebestAction">
+		<result >/manage/goodPublish.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="delete_user" class="com.bbs.action.AdminAction" method="deleteUser">
+		<result >/manage/userManage.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="add_subject" class="com.bbs.action.SubjectAction" method="addSubject">
+		<result name="add_success">/manage/addSubject.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="delete_subject" class="com.bbs.action.SubjectAction" method="deleteSubject">
+		<result name="delete_success">/manage/subjectManage.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="recover_subject" class="com.bbs.action.SubjectAction" method="recoverSubject">
+		<result name="recover_success">/manage/subjectManage.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="update_subject" class="com.bbs.action.SubjectAction" method="updateSubject">
+		<result name="update_success">/manage/subjectManage.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="admin_delete_post" class="com.bbs.action.SubjectAction" method="adminDeleteSubject">
+		<result name="update_success">/manage/managePost.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	<action name="set_top" class="com.bbs.action.SubjectAction" method="setTop">
+		<result name="set_success">/manage/managePostTwo.jsp</result>
+		<result name="error">/pages/error.jsp</result>	
+	</action>
+	
+	<action name="add_reply" class="com.bbs.action.ReplyAction" method="addReply">
+		<result name="add_success">/pages/sendReject.jsp</result> 
+		<result name="error">/login.jsp</result>
+	</action>
+	<action name="search_post" class="com.bbs.action.PostAction" method="search">
+		<result name="search_success">/pages/list.jsp</result> 
+		<result name="error">/login.jsp</result>
+	</action>
+	
+</package>
+
+
+
+</struts>    
